@@ -1,0 +1,23 @@
+﻿@using BurakNews.Core.Entities;
+
+@{
+    ViewData["Title"] = "GetAllRoleList";
+}
+@model List<AppRole>
+<h1>GetAllRoleList</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Name</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>

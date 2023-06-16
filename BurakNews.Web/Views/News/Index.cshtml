@@ -1,0 +1,30 @@
+﻿@model List<NewWithCategoryDto>
+<a class="btn btn-success btn-sm" asp-action="Save" asp-controller="News">Save a news to the list at below</a>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Author</td>
+            <td>CategoryId</td>
+            <td>Action</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+        <td>@item.Id</td>
+        <td>@item.Title</td>
+        <td>@item.Description</td>
+        <td>@item.Author</td>
+        <td>@item.Category.Name</td>
+        <td>
+                    <a asp-controller="News" asp-action="Update" asp-route-id="@item.Id" class="btn btn-primary btn-sm">Update</a>
+                    <a asp-controller="News" asp-action="Remove" asp-route-id="@item.Id" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

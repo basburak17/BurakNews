@@ -1,0 +1,25 @@
+﻿@using BurakNews.Core.ViewModels;
+@model List<UserViewModel>
+@{
+    ViewData["Title"] = "GetAllUsers";
+}
+<h1>User List</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var userRole in Model)
+            {
+                <tr>
+                    <td>@userRole.Username</td>
+                    <td>@userRole.Email</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
